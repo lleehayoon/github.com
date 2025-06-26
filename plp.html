@@ -1,0 +1,260 @@
+<DOCTYPE html>
+  <html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="../css/plp.css" rel="stylesheet">
+  </head>
+  <div class="flex-container">
+    <div class="brandname"  onclick="goToAllPage()">LEEYOON</div>
+    <div style="flex-grow: 0.95;"></div>
+    <div class="box" id="shop-btn" onclick="showWhiteScreen('shop')">MENU</div>
+
+
+    <div id="white-overlay">
+      <p class="shop-list1" onclick="goToAllPage()">SHOP</p>
+      <p class="shop-list2" onclick="goToGalleryPage()">GALLERY</p>
+      <p class="shop-list2">NEWS</p>
+      <p class="shop-list2">ABOUT</p>
+      <div id="back-btn" onclick="hideWhiteScreen()">BACK</div>
+    </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </div>
+
+  <div class="shop-background">
+    <div class="shop-container">
+      <div class="shop-item">
+        <div style="position: relative;">
+          <img src="../1-1.webp" style="width: 100%;" onclick="goToPdpPage1()">
+          <img src="../1-2.webp" style="width: 100%;" class="overlay" onclick="goToPdpPage1()">
+        </div>
+        <div class="shop-productname">
+          <p onclick="goToPdpPage()">PRODUCT 1</p>
+        </div>
+        <div class="shop-price">
+          <p>100,000KRW</p>
+        </div>
+      </div>
+
+      <div class="shop-item">
+        <div style="position: relative;">
+          <img src="../2-1.webp" style="width: 100%;" onclick="goToPdpPage2()">
+          <img src="../2-2.webp" style="width: 100%;" class="overlay" onclick="goToPdpPage2()">
+        </div>
+        <div class="shop-productname">
+          <p>PRODUCT 2</p>
+        </div>
+        <div class="shop-price">
+          <p>100,000KRW</p>
+        </div>
+      </div>
+
+      <div class="shop-item">
+        <div style="position: relative;">
+          <img src="../3-1.webp" style="width: 100%;" onclick="goToPdpPage3()">
+          <img src="../3-2.webp" style="width: 100%;" class="overlay" onclick="goToPdpPage3()">
+
+        </div>
+        <div class="shop-productname">
+          <p>PRODUCT 3</p>
+        </div>
+        <div class="shop-price">
+          <p>100,000KRW</p>
+        </div>
+      </div>
+      <div class="shop-item">
+        <div style="position: relative;">
+          <img src="../4-1.webp" style="width: 100%;"onclick="goToPdpPage4()" > 
+          <img src="../4-2.webp" style="width: 100%;" class="overlay" onclick="goToPdpPage4()">
+
+        </div>
+        <div class="shop-productname">
+          <p>PRODUCT 4</p>
+        </div>
+        <div class="shop-price">
+          <p>100,000KRW</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="shop-background">
+    <div class="shop-container">
+      <div class="shop-item">
+        <div style="position: relative;">
+          <img src="../5-1.webp" style="width: 100%;" onclick="goToPdpPage5()">
+          <img src="../5-2.webp" style="width: 100%;" class="overlay" onclick="goToPdpPage5()">
+        </div>
+        <div class="shop-productname">
+          <p onclick="goToPdpPage()">PRODUCT 5</p>
+        </div>
+        <div class="shop-price">
+          <p>100,000KRW</p>
+        </div>
+      </div>
+
+      <div class="shop-item">
+        <div style="position: relative;">
+          <img src="../6-1.webp" style="width: 100%;" onclick="goToPdpPage6()">
+          <img src="../6-2.webp" style="width: 100%;" class="overlay" onclick="goToPdpPage6()">
+        </div>
+        <div class="shop-productname">
+          <p>PRODUCT 6</p>
+        </div>
+        <div class="shop-price">
+          <p>100,000KRW</p>
+        </div>
+      </div>
+
+      <div class="shop-item">
+        <div style="position: relative;">
+          <img src="../7-1.webp" style="width: 100%;" onclick="goToPdpPage7()">
+          <img src="../7-2.webp" style="width: 100%;" class="overlay" onclick="goToPdpPage7()">
+
+        </div>
+        <div class="shop-productname">
+          <p>PRODUCT 7</p>
+        </div>
+        <div class="shop-price">
+          <p>100,000KRW</p>
+        </div>
+      </div>
+      <div class="shop-item">
+        <div style="position: relative;">
+          <img src="../8-1.webp" style="width: 100%; " onclick="goToPdpPage8()">
+          <img src="../8-2.webp" style="width: 100%;" class="overlay"onclick="goToPdpPage8()" >
+
+        </div>
+        <div class="shop-productname">
+          <p>PRODUCT 8</p>
+        </div>
+        <div class="shop-price3">
+          <p>100,000KRW</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="footer">
+    <p>©LEEYOON</p>
+    <p style="padding-bottom: 13px;">leeyoonlab@google.com</p>
+    <p>Registration Number: 서울시 강동구 천호동 363-9 1F</p>
+    <p>Business number : 810-21-01833 & Phone Number : 010-6390-8220</p>
+    <p style="margin-top: 7px;">Agreement & Privacy</p>
+
+  </div>
+
+  <script>
+
+
+
+
+    function showWhiteScreen(type) {
+      const shop = document.getElementById('shop-btn');
+      const back = document.getElementById('back-btn');
+      const rect = shop.getBoundingClientRect();  // 항상 SHOP 위치 기준
+
+      document.getElementById('white-overlay').style.display = 'block';
+
+      // SHOP 위치에 BACK 위치 고정
+      const width = rect.width;
+      back.style.top = rect.top + 'px';
+      back.style.left = (rect.left + width / 2) + 'px';
+      back.style.transform = 'translateX(-50%)';
+
+      // 클릭된 버튼 커서 wait → pointer
+      const target = document.getElementById(type + '-btn');
+      target.style.cursor = 'wait';
+      setTimeout(() => {
+        target.style.cursor = 'pointer';
+      }, 500);
+    }
+
+    function hideWhiteScreen() {
+      document.getElementById('white-overlay').style.display = 'none';
+      const back = document.getElementById('back-btn');
+      back.style.cursor = 'wait';
+      setTimeout(() => {
+        back.style.cursor = 'pointer';
+      }, 500);
+    }
+
+    function goToAllPage() {
+      window.location.href = 'plp.html';
+    }
+
+    function goToPdpPage1() {
+      window.location.href = 'pdp-1.html';
+    }
+
+    function goToPdpPage2() {
+      window.location.href = 'pdp-2.html';
+    }
+
+    function goToPdpPage3() {
+      window.location.href = 'pdp-3.html';
+    }
+
+    function goToPdpPage4() {
+      window.location.href = 'pdp-4.html';
+    }
+
+    function goToPdpPage5() {
+      window.location.href = 'pdp-5.html';
+    }
+
+ function goToPdpPage6() {
+      window.location.href = 'pdp-6.html';
+    }
+
+    function goToPdpPage7() {
+      window.location.href = 'pdp-7.html';
+    }
+
+    function goToPdpPage8() {
+      window.location.href = 'pdp-8.html';
+    }
+
+    function goToAccountPage() {
+      window.location.href = 'account.html';
+    }
+
+    function goToGalleryPage() {
+      window.location.href = 'gallery.html';
+    }
+
+window.addEventListener('scroll', function () {
+  const brand = document.querySelector('.brandname');
+  if (!brand) return;
+
+  const isMobile = window.innerWidth <= 768; // 모바일 판별 기준
+
+  if (window.scrollY >= 50) {
+    brand.style.fontSize = '0px';
+  } else {
+    brand.style.fontSize = isMobile ? '15px' : '25px';
+  }
+});
+
+ window.addEventListener('scroll', function() {
+  const brand = document.querySelector('.flex-container');
+  if (!brand) return;
+
+  const isMobile = window.innerWidth <= 768; // 모바일 구분
+
+  if (window.scrollY >= 50) {
+    brand.style.fontSize = '0px';
+  } else {
+    brand.style.fontSize = isMobile ? '13px' : '18px';
+  }
+});
+
+
+
+
+  </script>
+  </body>
+
+  </html>
